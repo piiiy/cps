@@ -21,3 +21,158 @@
     font-style: normal;
     font-display: swap;
 }
+
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'TT Lakes', sans-serif;
+    background: #F8F8F8;
+    color: #1B1C21;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    height: 88px;
+    padding: 0 16px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #D9FFF5;
+}
+
+.header__main-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header__button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.header__divider {
+    width: 2px;
+    height: 32px;
+    background: #EAEAEA;
+    border-radius: 1px;
+}
+
+.header__divider--hide-on-low {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header__divider--hide-on-low {
+    display: block;
+  }
+}
+
+/* Services section */
+.services {
+    padding: 24px 16px 0;
+}
+
+.services__header {
+    margin-bottom: 24px;
+}
+
+.services__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.services__highlight {
+    width: 4px;
+    height: 40px;
+    background: #41F6D7;
+    border-radius: 0 4px 4px 0;
+}
+
+.services__heading {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Tabs navigation */
+.services__nav {
+    margin-bottom: 24px;
+}
+
+.services__scroll-container {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+}
+
+.services__scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.services__tab {
+    flex: 0 0 auto;
+    padding: 8px 16px;
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #7E7E82;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.services__tab--active {
+    border-color: #B8FFEC;
+    background: #FFFFFF;
+}
+
+/* Content */
+.services__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.services__text {
+    margin-bottom: 16px;
+    
+}
+
+.services__paragraph {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    margin: 0 0 16px 0;
+}
+
+.services__paragraph--hidden {
+    display: none;
+}
+
+.services__more {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1B1C21;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.services__image {
+    width: 100%;
+}
+
+.services__picture {
+    width: 100%;
+    border-radius: 6px;
+}
