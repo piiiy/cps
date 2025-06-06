@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'TT Lakes';
-    src: url('/fonts/TTLakes-Bold.woff2') format('woff2');
+    src: url('./fonts/TTLakes-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'TT Lakes';
-    src: url('/fonts/TTLakes-Medium.woff2') format('woff2');
+    src: url('./fonts/TTLakes-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'TT Lakes';
-    src: url('/fonts/TTLakes-Regular.woff2') format('woff2');
+    src: url('./fonts/TTLakes-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -33,17 +33,28 @@ body {
 /* Header */
 .header {
     display: flex;
+    justify-content: space-between; /* Распределяет пространство между двумя nav */
     align-items: center;
     height: 88px;
     padding: 0 16px;
     background: #FFFFFF;
     border-bottom: 1px solid #D9FFF5;
+    width: 100%; /* Добавляем ширину */
+    box-sizing: border-box; /* Учитываем padding в ширине */
 }
 
 .header__main-nav {
     display: flex;
     align-items: center;
     gap: 16px;
+    margin-right: auto; /* Прижимает дополнительную навигацию вправо */
+}
+
+.header__additional-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto; /* Прижимает к правому краю */
 }
 
 .header__button {
@@ -63,11 +74,11 @@ body {
   display: none;
 }
 
-@media (min-width: 768px) {
-  .header__divider--hide-on-low {
-    display: block;
-  }
+.header__button--hide-on-low {
+  display: none;
 }
+
+
 
 /* Services section */
 .services {
@@ -82,6 +93,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-left: -16px;
 }
 
 .services__highlight {
@@ -104,7 +116,7 @@ body {
 
 .services__scroll-container {
     display: flex;
-    gap: 16px;
+    gap: 1px;
     overflow-x: auto;
     padding-bottom: 8px;
     scrollbar-width: none;
@@ -140,7 +152,7 @@ body {
 
 .services__text {
     margin-bottom: 16px;
-    
+
 }
 
 .services__paragraph {
@@ -169,10 +181,100 @@ body {
 }
 
 .services__image {
-    width: 100%;
+   width: 100%;        
 }
 
 .services__picture {
+    width: 100vw;
+    margin-left: -16px;
+    display: block; 
+}
+
+/* 768 */
+@media (min-width: 768px) {
+  /* шапка */
+  .header__divider--hide-on-low {
+    display: block;
+  }
+  .header__button--hide-on-low {
+    display: block;
+  }
+
+  .header {
+    padding: 0 24px; /* Увеличиваем боковые отступы */
+  }
+
+   .header__main-nav {
+    gap: 20px; /* Увеличиваем промежутки между элементами */
+  }
+
+  .header__additional-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Общий отступ между группами */
+  }
+
+  .header__left-icons,
+  .header__right-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Отступ между иконками внутри групп */
+  }
+
+  /* услуги и сервисы*/
+   .services {
+    padding: 0 24px; /* Только боковые отступы */
+  }
+  
+  .services__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    margin-bottom: 32px;
+
+  }
+
+  .services__title {
+    margin-left: -24px;
+  }
+
+    .services__nav {
+       margin-bottom: 32px;
+  }
+  
+  /* текст и картинка */
+  .services__content {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+  }
+
+  .services__text {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .services__paragraph--hidden {
+    display: block; /* Показываем скрытый текст */
+  }
+
+  .services__span--hidden {
+    display: none;
+  }
+
+  .services__textButton{
+    width: 47%;
+  }
+  
+  .services__image {
+    width: 47%;
+  }
+
+  .services__picture {
     width: 100%;
+    margin-left: 0;
     border-radius: 6px;
+  }
+
 }

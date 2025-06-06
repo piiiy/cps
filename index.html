@@ -1,75 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPS</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <header class="header">
-        <nav class="header__main-nav">
-            <button class="header__button">
-                <img src="./icons/burger.png" alt="Меню" class="header__icon">
-            </button>
-            <div class="header__divider header__divider--hide-on-low">
-                <img src="./icons/divider.png" alt="Серая_полоска">
-            </div>
-            <img src="./icons/Group.png" alt="CPS" class="header__logo">
-            <div class="header__divider">
-                <img src="./icons/divider.png" alt="Серая_полоска">
-            </div>
-            <button class="header__button">
-                <img src="./icons/repair.png" alt="Ремонт" class="header__icon">
-            </button>
-             <button class="header__button">
-                <img src="./icons/checkstatus.png" alt="Поиск" class="header__icon">
-            </button>
-        </nav>
-        
-    </header>
-
-    <main class="main">
-        <section class="services">
-            <div class="services__header">
-                <div class="services__title">
-                    <div class="services__highlight"></div>
-                    <h1 class="services__heading">Услуги и сервисы</h1>
-                </div>
-            </div>
-
-            <div class="services__nav">
-                <div class="services__scroll-container">
-                    <button class="services__tab services__tab--active">Ремонтируемые бренды</button>
-                    <button class="services__tab">Ремонтируемые устройства</button>
-                    <button class="services__tab">Цены на услуги</button>
-                    <button class="services__tab">Адреса сервисных центров</button>
-                    <button class="services__tab">Специальные цены</button>
-                    <button class="services__tab">Отзывы</button>
-                </div>
-            </div>
-
-            <div class="services__content">
-                <div class="services__text">
-                    <p class="services__paragraph">
-                        Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете
-                        отремонтировать свой ноутбук Dell с официальной гарантией производителя.
-                    </p>
-                    <p class="services__paragraph services__paragraph--hidden">
-                        Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает
-                        большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и,
-                        в свою очередь, советуют нас родным и близким.
-                    </p>
-                </div>
-                <button class="services__more">
-                    <img src="./icons/expand.png" alt="" class="services__more-icon">
-                    <span class="services__more-text">Читать далее</span>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CPS</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <header class="header">
+            <nav class="header__main-nav">
+                <button class="header__button">
+                    <img src="./icons/burger.png" alt="Меню" class="header__icon">
                 </button>
-                <div class="services__image">
-                    <img src="./images/cps.png" alt="О компании" class="services__picture">
+                <div class="header__divider header__divider--hide-on-low">
+                    <img src="./icons/divider.png" alt="Серая_полоска">
                 </div>
-            </div>
-        </section>
-    </main>
-</body>
-</html>
+                <img src="./icons/Group.png" alt="CPS" class="header__logo">
+            </nav>
+
+
+            <nav class="header__additional-nav">
+                <div class="header__left-icons">
+                    <button class="header__button header__button--hide-on-low ">
+                    <img src="./icons/call.png" alt="Звонок">
+                </button>
+                <button class="header__button header__button--hide-on-low ">
+                    <img src="./icons/chat.png" alt="Чат">
+                </button>
+                <button class="header__button header__button--hide-on-low ">
+                    <img src="./icons/profile.png" alt="Профиль">
+                </button>
+                </div>
+                
+                <div class="header__divider">
+                    <img src="./icons/divider.png" alt="Серая_полоска">
+                </div>
+
+                <div class="header__right-icons">
+                    <button class="header__button">
+                        <img src="./icons/repair.png" alt="Ремонт" class="header__icon">
+                    </button>
+                    <button class="header__button">
+                        <img src="./icons/checkstatus.png" alt="Поиск" class="header__icon">
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+
+        <main class="main">
+            <section class="services">
+                <div class="services__header">
+                    <div class="services__title">
+                        <div class="services__highlight"></div>
+                        <h1 class="services__heading">Услуги и сервисы</h1>
+                    </div>
+                </div>
+
+                <div class="services__nav">
+                    <div class="services__scroll-container">
+                        <button class="services__tab services__tab--active">Ремонтируемые бренды</button>
+                        <button class="services__tab">Ремонтируемые устройства</button>
+                        <button class="services__tab">Цены на услуги</button>
+                        <button class="services__tab">Адреса сервисных центров</button>
+                        <button class="services__tab">Специальные цены</button>
+                        <button class="services__tab">Отзывы</button>
+                    </div>
+                </div>
+
+                <div class="services__content">
+                    <div class="services__textButton">
+                        <div class="services__text">
+                            <div class="services__paragraph">
+                                Мы являемся авторизованным сервисным центром по ремонту техники
+                                Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
+                                официальной гарантией производителя.
+                            </div>
+                            <div class="services__paragraph services__paragraph--hidden">
+                                Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера
+                                <span class="services__span services__span--hidden"> 
+                                , что подтверждает большое количество постоянных клиентов.   
+                                Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою 
+                                очередь, советуют нас родным и близким.
+                                </span>
+                            </div>
+                        </div>
+                        <button class="services__more">
+                            <img src="./icons/expand.png" alt="" class="services__more-icon">
+                            <span class="services__more-text">Читать далее</span>
+                        </button>
+                    </div>
+                        <div class="services__image">
+                            <img src="./images/cps.png" alt="О компании" class="services__picture">
+                        </div>
+    
+                </div>
+            </section>
+        </main>
+    </body>
+    </html>
