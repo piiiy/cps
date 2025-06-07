@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
+        <!-- шапка-->
         <header class="header">
             <nav class="header__main-nav">
                 <button class="header__button">
@@ -22,40 +23,54 @@
             <nav class="header__additional-nav">
                 <div class="header__left-icons">
                     <button class="header__button header__button--hide-on-low ">
-                    <img src="./icons/call.png" alt="Звонок">
+                    <img src="./icons/call.png" alt="Звонок"/>
                 </button>
                 <button class="header__button header__button--hide-on-low ">
-                    <img src="./icons/chat.png" alt="Чат">
+                    <img src="./icons/chat.png" alt="Чат"/>
                 </button>
                 <button class="header__button header__button--hide-on-low ">
-                    <img src="./icons/profile.png" alt="Профиль">
+                    <img src="./icons/profile.png" alt="Профиль"/>
                 </button>
                 </div>
                 
                 <div class="header__divider">
-                    <img src="./icons/divider.png" alt="Серая_полоска">
+                    <img src="./icons/divider.png" alt="Серая_полоска"/>
                 </div>
 
                 <div class="header__right-icons">
                     <button class="header__button">
-                        <img src="./icons/repair.png" alt="Ремонт" class="header__icon">
+                        <img src="./icons/repair.png" alt="Ремонт"/>
                     </button>
                     <button class="header__button">
-                        <img src="./icons/checkstatus.png" alt="Поиск" class="header__icon">
+                        <img src="./icons/checkstatus.png" alt="Поиск"/>
                     </button>
                 </div>
             </nav>
         </header>
 
-
         <main class="main">
             <section class="services">
+                <!-- услуги и сервисы -->
                 <div class="services__header">
                     <div class="services__title">
-                        <div class="services__highlight"></div>
+                        <img src="./icons/highlight.png" alt="Голубая_полоска"/>
                         <h1 class="services__heading">Услуги и сервисы</h1>
                     </div>
+
+                    <div class="services__header-buttons">
+                    <button class="services__header-button">
+                            Оставить заявку
+                        <img src="./icons/repair.png" alt="Ремонт"/>
+                    </button>
+                    <button class="services__header-button">
+                        Статус ремонта
+                        <img src="./icons/checkstatus.png" alt="Поиск"/>
+                    </button>
+                 </div>       
+
                 </div>
+                 
+
 
                 <div class="services__nav">
                     <div class="services__scroll-container">
@@ -68,34 +83,35 @@
                     </div>
                 </div>
 
+                <!-- текст и картинка -->
                 <div class="services__content">
-                    <div class="services__textButton">
+                    <div class="services__text-more">
                         <div class="services__text">
-                            <div class="services__paragraph">
+                            <div class="services__paragraph services__paragraph--part1">
                                 Мы являемся авторизованным сервисным центром по ремонту техники
                                 Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
                                 официальной гарантией производителя.
                             </div>
-                            <div class="services__paragraph services__paragraph--hidden">
+                            <div class="services__paragraph services__paragraph--part2">
                                 Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера
-                                <span class="services__span services__span--hidden"> 
+                            </div>
+                            <div class="services__paragraph services__paragraph--part3"> 
                                 , что подтверждает большое количество постоянных клиентов.   
                                 Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою 
                                 очередь, советуют нас родным и близким.
-                                </span>
                             </div>
+                            
                         </div>
                         <button class="services__more">
-                            <img src="./icons/expand.png" alt="" class="services__more-icon">
-                            <span class="services__more-text">Читать далее</span>
+                            <img src="./icons/expand.png" alt="Стрелка_вниз" />
+                            Читать далее
                         </button>
                     </div>
                         <div class="services__image">
-                            <img src="./images/cps.png" alt="О компании" class="services__picture">
+                            <img src="./images/cps.png" alt="О_компании" class="services__picture">
                         </div>
-    
                 </div>
             </section>
         </main>
     </body>
-    </html>
+</html>

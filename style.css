@@ -22,7 +22,7 @@
     font-display: swap;
 }
 
-/* Base styles */
+
 body {
     margin: 0;
     font-family: 'TT Lakes', sans-serif;
@@ -30,44 +30,44 @@ body {
     color: #1B1C21;
 }
 
-/* Header */
+/* шапка */
 .header {
     display: flex;
-    justify-content: space-between; /* Распределяет пространство между двумя nav */
+    justify-content: space-between;
     align-items: center;
     height: 88px;
     padding: 0 16px;
     background: #FFFFFF;
     border-bottom: 1px solid #D9FFF5;
-    width: 100%; /* Добавляем ширину */
-    box-sizing: border-box; /* Учитываем padding в ширине */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header__main-nav {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-right: auto; /* Прижимает дополнительную навигацию вправо */
+    margin-right: auto;
 }
 
 .header__additional-nav {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-left: auto; /* Прижимает к правому краю */
+    margin-left: auto;
+}
+
+
+.header__right-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .header__button {
     background: none;
     border: none;
     padding: 0;
-}
-
-.header__divider {
-    width: 2px;
-    height: 32px;
-    background: #EAEAEA;
-    border-radius: 1px;
 }
 
 .header__divider--hide-on-low {
@@ -78,9 +78,7 @@ body {
   display: none;
 }
 
-
-
-/* Services section */
+/* сервис и услуги */
 .services {
     padding: 24px 16px 0;
 }
@@ -96,20 +94,16 @@ body {
     margin-left: -16px;
 }
 
-.services__highlight {
-    width: 4px;
-    height: 40px;
-    background: #41F6D7;
-    border-radius: 0 4px 4px 0;
-}
-
 .services__heading {
     margin: 0;
     font-size: 28px;
     font-weight: 700;
 }
 
-/* Tabs navigation */
+.services__header-buttons {
+    display: none;
+}
+
 .services__nav {
     margin-bottom: 24px;
 }
@@ -144,15 +138,10 @@ body {
     background: #FFFFFF;
 }
 
-/* Content */
+/* текст и картинка */
 .services__content {
     display: flex;
     flex-direction: column;
-}
-
-.services__text {
-    margin-bottom: 16px;
-
 }
 
 .services__paragraph {
@@ -162,7 +151,12 @@ body {
     margin: 0 0 16px 0;
 }
 
-.services__paragraph--hidden {
+.services__text {
+    margin-bottom: 16px;
+}
+
+.services__paragraph--part2,
+.services__paragraph--part3 {
     display: none;
 }
 
@@ -201,29 +195,29 @@ body {
   }
 
   .header {
-    padding: 0 24px; /* Увеличиваем боковые отступы */
+    padding: 0 24px;
   }
 
    .header__main-nav {
-    gap: 20px; /* Увеличиваем промежутки между элементами */
+    gap: 20px;
   }
 
   .header__additional-nav {
     display: flex;
     align-items: center;
-    gap: 20px; /* Общий отступ между группами */
+    gap: 20px;
   }
 
   .header__left-icons,
   .header__right-icons {
     display: flex;
     align-items: center;
-    gap: 16px; /* Отступ между иконками внутри групп */
+    gap: 16px;
   }
 
   /* услуги и сервисы*/
    .services {
-    padding: 0 24px; /* Только боковые отступы */
+    padding: 0 24px;
   }
   
   .services__header {
@@ -239,8 +233,12 @@ body {
     margin-left: -24px;
   }
 
-    .services__nav {
+  .services__nav {
        margin-bottom: 32px;
+  }
+
+  .services__header-buttons {
+    display: none;
   }
   
   /* текст и картинка */
@@ -250,31 +248,144 @@ body {
     gap: 48px;
   }
 
-  .services__text {
-    flex: 1;
-    margin-bottom: 0;
-  }
+ .services__paragraph--part1 {
+        gap: 20px;
+    }
 
-  .services__paragraph--hidden {
-    display: block; /* Показываем скрытый текст */
-  }
+ .services__paragraph--part2 {
+        display: block;
+        margin-top: 20px; 
+    }
 
-  .services__span--hidden {
-    display: none;
-  }
-
-  .services__textButton{
-    width: 47%;
+  .services__text-more{
+    width: 43.5%;
   }
   
   .services__image {
-    width: 47%;
+    width: 50%;
   }
 
   .services__picture {
-    width: 100%;
     margin-left: 0;
     border-radius: 6px;
+    width: clamp(360px, calc(360px + 170.25 * (100vw - 768px) / 351), 530.25px);
+    height: clamp(208px, calc(208px + 98 * (100vw - 768px) / 351), 306px);
   }
+}
 
+
+/* 1120 */
+@media (min-width: 1120px) {
+    .header {
+        display: none;
+    }
+    
+    .main {
+        padding-top: 42px;
+    }
+
+    /* услуги и сервис*/
+    .services {
+        padding: 0 32px;
+        max-width: 1120px;
+        margin: 0 auto;
+    }
+    
+    .services__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0;
+        margin-bottom: 8px;
+    }
+    
+    .services__title-wrapper {
+        display: flex;
+        align-items: center;
+    }
+    
+    .services__title {
+        margin-left: -32px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .services__header-buttons {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+    
+    .services__header-button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: none;
+        border: none;
+        font-family: 'TT Lakes', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #1B1C21;
+        cursor: pointer;
+        white-space: nowrap;
+        padding: 0;
+    }
+    
+    .services__nav {
+        margin-bottom: 8px;
+    }
+    
+    .services__scroll-container {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        gap: 0;
+        row-gap: 8px;
+    }
+    
+    .services__tab {
+        margin-right: 4px;
+        margin-bottom: 4px;
+    }
+
+    
+    /* текст и картинка*/
+
+    .services__content {
+        display: flex;
+        gap: 36px;
+    }
+    
+    .services__text-more {
+        width: 50%;
+        padding-top: 10px;
+    }
+    
+    .services__image {
+        width: 50%;
+    }
+    
+    .services__picture {
+        border-radius: 6px;
+        width: 100%;
+        width: clamp(531.25px, calc(531.25px + 590.75 * (100vw - 1120px) / 800), 1122px);
+        height: clamp(307px, calc(307px + 399 * (100vw - 1120px) / 800), 706px);
+    }
+    
+    .services__paragraph {
+        margin-bottom: 20px;
+    }
+    
+    .services__paragraph--part2 {
+        display: inline; 
+        margin-bottom: 0 !important; 
+    }
+    
+    .services__paragraph--part3 {
+        display: inline;
+        margin-left: -4px; 
+    }
+    
+    .services__paragraph--part2::after {
+        content: " "; 
+    }
 }
