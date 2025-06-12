@@ -216,6 +216,7 @@ body {
   padding: 24px 16px;
   box-sizing: border-box;
   gap: 46px;
+  overflow-y: auto;
 }
 
 .mobile-menu--open {
