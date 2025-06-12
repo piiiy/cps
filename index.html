@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CPS</title>
         <link rel="stylesheet" href="./style.css">
+        <script src="./js/script.js"></script>
     </head>
     <body>
         <!-- шапка-->
@@ -114,5 +115,81 @@
                 </div>
             </section>
         </main>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu">
+
+            <!-- шапка -->
+            <div class="mobile-menu__header">
+                <div class="mobile-menu__left-icon">
+                    <button class="mobile-menu__close-button">
+                        <img src="./icons/close.svg" alt="Закрыть">
+                    </button>
+                    <img src="./icons/Group.svg" alt="CPS" class="mobile-menu__logo">
+                </div>
+                <button class="mobile-menu__button">
+                    <img src="./icons/search.svg" alt="Поиск">
+                </button>
+            </div>
+
+             <!-- навигация -->
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item mobile-menu__item--active">
+                        <a href="#" class="mobile-menu__link">Ремонт техники</a>
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="#" class="mobile-menu__link">Услуги и сервисы</a>
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="#" class="mobile-menu__link">Корпоративным клиентам</a>
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="#" class="mobile-menu__link">Продавцам техники</a>
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="#" class="mobile-menu__link">Партнерам</a>
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="#" class="mobile-menu__link">Производителям</a>
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="#" class="mobile-menu__link">Наши сервисные центры</a>
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="#" class="mobile-menu__link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+
+             <!-- контакты -->
+            <div class="mobile-menu__footer">
+                <div class="mobile-menu__buttons">
+                    <button class="mobile-menu__button">
+                        <img src="./icons/call.svg" alt="Позвонить">
+                    </button>
+                    <button class="mobile-menu__button">
+                        <img src="./icons/chat.svg" alt="Чат">
+                    </button>
+                    <button class="mobile-menu__button">
+                        <img src="./icons/profile.svg" alt="Профиль">
+                    </button>
+                </div>
+                
+                <div class="mobile-menu__contacts">
+                    <a href="mailto:mail@cps.com" class="mobile-menu__email">mail@cps.com</a>
+                    <a href="tel:+78008908900" class="mobile-menu__phone">8 800 890 8900</a>
+                </div>
+                
+                <div class="mobile-menu__lang">
+                    <button class="mobile-menu__lang-button mobile-menu__lang-button--active">RU</button>
+                    <button class="mobile-menu__lang-button">EN</button>
+                    <button class="mobile-menu__lang-button">CH</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mobile-menu__overlay"></div>
     </body>
 </html>
