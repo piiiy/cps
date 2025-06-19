@@ -204,10 +204,19 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin: 0 -16px;
+}
+
+.brands__header {
+  display: flex;
+  background: #ffffff;
+  height: 80px;
+  border-top: 1px solid #D9FFF5;
+  align-items: center;
 }
 
 .header__title {
-  margin: 0;
+  padding: 16px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -572,6 +581,10 @@ body {
   }
 
   /*слайдер*/
+    .brand-section{
+      display: flex;
+      gap: 16px;
+    }
   
    .brands__slider {
         display: none !important;

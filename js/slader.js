@@ -1,6 +1,7 @@
 // Инициализация свайпера 
 const swiper = new Swiper(".swiper", {
     slidesPerView: 'auto',
+    slidesOffsetBefore: 16, 
     slidesOffsetAfter: 16,
     spaceBetween: 16,
     pagination: {
