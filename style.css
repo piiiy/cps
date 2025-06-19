@@ -209,7 +209,7 @@ body {
 
 .brands__header {
   display: flex;
-  background: #ffffff;
+  background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 99%);
   height: 80px;
   border-top: 1px solid #D9FFF5;
   align-items: center;
@@ -217,6 +217,7 @@ body {
 
 .header__title {
   padding: 16px;
+  margin: 0;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -581,12 +582,18 @@ body {
   }
 
   /*слайдер*/
-    .brand-section{
+    .brand-section {
       display: flex;
       gap: 16px;
+      margin: 0 -24px;
+    }
+
+    .header__title {
+      padding: 24px;
+
     }
   
-   .brands__slider {
+   .brands {
         display: none !important;
     }
 
@@ -611,6 +618,7 @@ body {
         overflow: hidden;
         max-height: 176px; 
         transition: max-height 0.3s ease;
+        padding-left: 24px;
     }
 
     
@@ -641,6 +649,7 @@ body {
         font-size: 16px;
         font-weight: 500;
         cursor: pointer;
+        padding-left: 24px;
     }
 }
 
@@ -740,10 +749,18 @@ body {
   }
 
   /* слайдер*/
-  .brands__slider {
+    .brands__slider {
         display: none !important;
     }
-    
+
+    .brand-section {
+      margin: 0 -32px;
+    }
+
+    .header__title {
+      padding: 32px;
+    }
+
     .brands-grid {
         display: grid;
         grid-template-columns: repeat(4, 240px);
@@ -751,6 +768,7 @@ body {
         overflow: hidden;
         max-height: 176px; 
         transition: max-height 0.3s ease;
+        padding-left: 32px;
     }
 
     .brands-grid.expanded {
@@ -790,5 +808,6 @@ body {
         font-size: 16px;
         font-weight: 500;
         cursor: pointer;
+        padding-left: 32px;
     }
 }
