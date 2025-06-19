@@ -199,6 +199,97 @@ body {
     display: block; 
 }
 
+/* слайдер*/
+.brand-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  color: #7E7E82;
+  font-family: "TT Lakes", sans-serif;
+}
+
+.brands {
+  max-width: 100%;
+  position: relative;
+  background: #f8f8f8;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.brands__fade {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 81px;
+  z-index: 10;
+  background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+  pointer-events: none;
+}
+
+.brands__item {
+  width: 240px !important;
+  height: 72px !important;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid rgba(234, 234, 234, 1);
+  border-radius: 6px;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.brands__arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.3s ease;
+}
+
+.brands__arrow:hover {
+  opacity: 0.7;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: #DDDDDD !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #B5B6BC !important;
+}
+
+.toggle-btn {
+  display: none;
+}
+
+.brands-grid {
+  display: none;
+}
+
+.brands-grid.expanded {
+  max-height: none;
+}
+
 
 /* бургер меню */
 .mobile-menu {
@@ -385,8 +476,10 @@ body {
   color: #7E7E82;
 }
 
+
 /* 768 */
 @media (min-width: 768px) {
+
   /* шапка */
   .header__divider--hide-on-low {
     display: block;
@@ -477,6 +570,65 @@ body {
     width: clamp(360px, calc(360px + 170.25 * (100vw - 768px) / 351), 530.25px);
     height: clamp(208px, calc(208px + 98 * (100vw - 768px) / 351), 306px);
   }
+
+  /*слайдер*/
+  
+   .brands__slider {
+        display: none !important;
+    }
+
+    .brand {
+      width: 224px ;
+      height: 72px ;
+      box-sizing: border-box;
+      background-color: #fff;
+      border: 1px solid rgba(234, 234, 234, 1);
+      border-radius: 6px;
+      display: flex ;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    
+    .brands-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 224px);
+        gap: 16px 24px;
+        overflow: hidden;
+        max-height: 176px; 
+        transition: max-height 0.3s ease;
+    }
+
+    
+    .brands-grid.expanded {
+        max-height: 1000px; 
+    }
+
+    .brand-btn {
+      background: none;
+      border: none;
+    }
+    
+    .brand__hidden {
+        display: none;
+    }
+    
+    .brands-grid.expanded .brand__hidden {
+        display: flex;
+    }
+    
+    .toggle-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: none;
+        border: none;
+        font-family: "TT Lakes", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+    }
 }
 
 
@@ -548,14 +700,11 @@ body {
         row-gap: 8px;
     }
     
-    
     /* текст и картинка*/
-
     .services__content {
         display: flex;
         gap: 36px;
     }
-
 
     .services__text-more {
         width: 50%;
@@ -576,4 +725,57 @@ body {
   .services__paragraph--part3{
     display: inline;
   }
+
+  /* слайдер*/
+  .brands__slider {
+        display: none !important;
+    }
+    
+    .brands-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 240px);
+        gap: 16px 32px;
+        overflow: hidden;
+        max-height: 176px; 
+        transition: max-height 0.3s ease;
+    }
+
+    .brands-grid.expanded {
+        max-height: 1000px;
+    }
+
+    .brand {
+      width: 224px ;
+      height: 72px ;
+      box-sizing: border-box;
+      background-color: #fff;
+      border: 1px solid rgba(234, 234, 234, 1);
+      border-radius: 6px;
+      display: flex ;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .brand-btn {
+      background: none;
+      border: none;
+    }
+
+    .brands-grid.expanded .brand__hidden {
+        display: flex;
+    }
+    
+    .toggle-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: none;
+        border: none;
+        font-family: "TT Lakes", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+    }
 }

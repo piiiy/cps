@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuOverlay = document.querySelector('.mobile-menu__overlay');
     const closeButton = document.querySelector('.mobile-menu__close-button');
     
-    // Функция для открытия меню
+    //открытия меню
     function openMenu() {
         mobileMenu.classList.add('mobile-menu--open');
         mobileMenu.classList.remove('mobile-menu--closed');
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'hidden';
     }
     
-    // Функция для закрытия меню
+    //закрытия меню
     function closeMenu() {
         mobileMenu.classList.remove('mobile-menu--open');
         mobileMenu.classList.add('mobile-menu--closed');
@@ -25,6 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     closeButton.addEventListener('click', closeMenu);
     mobileMenuOverlay.addEventListener('click', closeMenu);
     
-    // Инициализация - убедимся, что меню закрыто при загрузке
+    // меню закрыто при загрузке
     mobileMenu.classList.add('mobile-menu--closed');
 });
