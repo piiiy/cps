@@ -1,0 +1,215 @@
+.price-section{
+    
+    @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    }
+    @media (min-width: 1440px) {
+      gap: 32px;
+    }
+}
+
+.price__header {
+  display: flex;
+  background: linear-gradient(90deg, #f8f8f8 0%, #ffffff 100%);
+  border-top: 1px solid #d9fff5;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 32px;
+  margin-left: -24px;
+  }
+
+
+.price__title {
+  padding: 16px 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  color: #7e7e82;
+  font-family: "TT Lakes", sans-serif;
+}
+
+// Слайдер (мобилка)
+.price {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.price__slider {
+  padding: 0 16px;
+  overflow: visible;
+}
+
+.price__item {
+  width: 260px !important;
+  height: 200px !important;
+  background: #fff;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+.price__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+ 
+}
+
+.price__block .price__text {
+  color: #7e7e82;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.price__block .price__span {
+  color: #1B1C21;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.price__block--main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.price__arrow {
+  background: #FF3E79;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 700;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  &:hover {
+    background: #ff629e;
+  }
+}
+
+// Grid-таблица (планшет/десктоп)
+.price-table {
+  display: none;
+  background: #fff;
+  border-radius: 6px;
+  @media (min-width: 768px) {
+    display: block;
+    padding: 24px;
+  }
+  @media (min-width: 1140px) {
+    padding: 32px 40px;
+  }
+  
+}
+
+.price-table__head {
+    display: none;
+  @media (min-width: 768px) {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 120px;
+  background: #f8f8f8;
+  color: #7e7e82;
+  font-size: 14px;
+  border-radius: 6px 6px 0 0;
+  padding: 16px 24px 16px 24px;
+  margin-bottom: -24px;
+ } 
+  @media (min-width: 1440px) {
+    margin-bottom: -32px;
+  }
+}
+
+.price-grid--table {
+  display: grid;
+  gap: 8px;
+  margin-top: 0;
+}
+
+.price-table__row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 120px;
+  align-items: center;
+  border-bottom: 1px solid #EAEAEA;
+  padding: 16px 0;
+  font-size: 16px;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.price-table__button {
+  background: #FF3E79;
+  border: none;
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  justify-self: end;
+  &:hover {
+    background: #ff629e;
+  }
+}
+
+.information__button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "TT Lakes", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1B1C21;
+  cursor: pointer;
+  padding: 0;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  @media (min-width: 768px) {
+    gap: 16px;
+  }
+}
+
+.swiper-slide.price__item {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}

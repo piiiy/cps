@@ -1,0 +1,196 @@
+@mixin brand-item($width: 240px) {
+  width: $width !important;
+  height: 72px !important;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid rgba(234, 234, 234, 1);
+  border-radius: 6px;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@mixin toggle-btn($padding-left) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  font-family: "TT Lakes", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding-left: $padding-left;
+}
+
+// Основные стили
+.brand-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 -16px;
+
+  @media (min-width: 768px) {
+    margin: 0 -24px;
+  }
+
+  @media (min-width: 1120px) {
+    margin: 0 -32px;
+  }
+}
+
+.brands {
+  max-width: 100%;
+  position: relative;
+  background: #f8f8f8;
+  overflow: hidden;
+  z-index: 1;
+
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+
+  &__header {
+    display: flex;
+    background: linear-gradient(90deg, #f8f8f8 0%, #ffffff 100%);
+    border-top: 1px solid #d9fff5;
+    align-items: center;
+  }
+
+  &__fade {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 81px;
+    z-index: 10;
+    background: linear-gradient(
+      270deg,
+      #f8f8f8 16.84%,
+      rgba(248, 248, 248, 0.0001) 100%
+    );
+    pointer-events: none;
+  }
+
+  &__item {
+    @include brand-item();
+  }
+
+  &__arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__slider {
+    @media (min-width: 1120px) {
+      display: none !important;
+    }
+  }
+}
+
+.header__title {
+  padding: 16px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  color: #7e7e82;
+  font-family: "TT Lakes", sans-serif;
+
+  @media (min-width: 768px) {
+    padding: 16px 16px 16px 24px;
+  }
+
+  @media (min-width: 1120px) {
+    padding: 16px 16px 16px 32px;
+  }
+}
+
+.swiper-pagination {
+  position: relative !important;
+  text-align: center;
+  margin-top: 16px;
+
+  &-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    background-color: #dddddd !important;
+
+    &-active {
+      background-color: #b5b6bc !important;
+    }
+  }
+}
+
+.toggle-btn {
+  display: none;
+
+  @media (min-width: 768px) {
+    @include toggle-btn(24px);
+  }
+
+  @media (min-width: 1120px) {
+    @include toggle-btn(32px);
+  }
+}
+
+// Grid
+.brands-grid {
+  display: none;
+
+  &.expanded {
+    max-height: none;
+  }
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 224px);
+    gap: 16px 24px;
+    overflow: hidden;
+    max-height: 176px;
+    transition: max-height 0.3s ease;
+    padding-left: 24px;
+
+    &.expanded {
+      max-height: 1000px;
+    }
+  }
+
+  @media (min-width: 1120px) {
+    grid-template-columns: repeat(4, 240px);
+    gap: 16px 32px;
+    padding-left: 32px;
+  }
+
+  .brand {
+    @include brand-item(224px);
+
+    @media (min-width: 1120px) {
+      @include brand-item(240px);
+    }
+
+    &-btn {
+      background: none;
+      border: none;
+    }
+
+    &__hidden {
+      display: none;
+
+      .brands-grid.expanded & {
+        display: flex;
+      }
+    }
+  }
+}

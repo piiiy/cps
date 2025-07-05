@@ -1,3 +1,4 @@
+console.log('burger.js загружен');
 document.addEventListener('DOMContentLoaded', function() {
     const burgerButton = document.querySelector('.header__button');
     const mobileMenu = document.querySelector('.mobile-menu');

@@ -1,0 +1,53 @@
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.information__text {
+  font-family: "TT Lakes", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  margin: 0;
+  color: #1b1c21;
+}
+
+.information__button {
+  display: inline;
+  font-family: "TT Lakes", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: #1b1c21;
+}
+
+img {
+  vertical-align: baseline;
+}
+
+.information__button img {
+  vertical-align: text-bottom;
+}
+
+@media (min-width: 768px) {
+  .information {
+    display: flex;
+    flex-direction: column;
+    width: 421px;
+    gap: 16px;
+   
+  }
+}
+
+@media (min-width: 1120px) {
+  .information {
+    display: flex;
+    flex-direction: column;
+    width: 421px;
+    gap: 16px;
+  }
+}
