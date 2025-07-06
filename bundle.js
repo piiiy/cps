@@ -31,14 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ 819:
 /***/ (() => {
 
-console.log('burger.js загружен');
 document.addEventListener('DOMContentLoaded', function () {
   var burgerButton = document.querySelector('.header__button');
   var mobileMenu = document.querySelector('.mobile-menu');
   var mobileMenuOverlay = document.querySelector('.mobile-menu__overlay');
   var closeButton = document.querySelector('.mobile-menu__close-button');
 
-  //открытия меню
+  //открытие меню
   function openMenu() {
     mobileMenu.classList.add('mobile-menu--open');
     mobileMenu.classList.remove('mobile-menu--closed');
@@ -46,21 +45,30 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = 'hidden';
   }
 
-  //закрытия меню
+  //закрытие меню
   function closeMenu() {
     mobileMenu.classList.remove('mobile-menu--open');
     mobileMenu.classList.add('mobile-menu--closed');
     mobileMenuOverlay.classList.remove('mobile-menu__overlay--open');
     document.body.style.overflow = '';
   }
-
-  // Обработчики событий
   burgerButton.addEventListener('click', openMenu);
   closeButton.addEventListener('click', closeMenu);
   mobileMenuOverlay.addEventListener('click', closeMenu);
 
   // меню закрыто при загрузке
   mobileMenu.classList.add('mobile-menu--closed');
+
+  // Логика для подсветки полоски при наведении
+  var menuItems = document.querySelectorAll('.mobile-menu__item');
+  menuItems.forEach(function (item) {
+    item.addEventListener('mouseenter', function () {
+      item.classList.add('mobile-menu__item--hovered');
+    });
+    item.addEventListener('mouseleave', function () {
+      item.classList.remove('mobile-menu__item--hovered');
+    });
+  });
 });
 
 /***/ }),
@@ -9954,7 +9962,7 @@ const expandVverh_namespaceObject = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iM
 
 
 
-// Инициализация свайпера
+//свайпера
 var swiper = new Swiper('.swiper', {
   modules: [Pagination],
   slidesPerView: 'auto',
@@ -9967,27 +9975,54 @@ var swiper = new Swiper('.swiper', {
   }
 });
 
-// Показать все/Скрыть
+// Показать все брэнды
 var toggleBtn = document.querySelector('.toggle-btn');
 var toggleText = toggleBtn.querySelector('.toggle-btn__text');
 var grid = document.querySelector('.brands-grid');
 var hiddenBrands = document.querySelectorAll('.brand__hidden');
 toggleBtn.addEventListener('click', function () {
   grid.classList.toggle('expanded');
-
-  // Переключение скрытых элементов
   hiddenBrands.forEach(function (brand) {
     brand.classList.toggle('brand__hidden');
   });
-
-  // текст кнопки
   var isExpanded = grid.classList.contains('expanded');
   toggleText.textContent = isExpanded ? 'Скрыть' : 'Показать все';
   toggleBtn.querySelector('img').src = isExpanded ? expandVverh_namespaceObject : expand_namespaceObject;
 });
+
+//"Читать далее" услуги
+var servicesMoreBtn = document.querySelector('.services__more');
+var servicesTextMore = document.querySelector('.services__text-more');
+if (servicesMoreBtn && servicesTextMore) {
+  var servicesMoreImg = servicesMoreBtn.querySelector('img');
+  var servicesMoreText = servicesMoreBtn.querySelector('span');
+  var expanded = false;
+  servicesMoreBtn.addEventListener('click', function () {
+    expanded = !expanded;
+    servicesTextMore.classList.toggle('expanded', expanded);
+    servicesMoreText.textContent = expanded ? 'Скрыть' : 'Читать далее';
+    servicesMoreImg.src = expanded ? expandVverh_namespaceObject : expand_namespaceObject;
+    servicesMoreImg.alt = expanded ? 'Стрелка_вверх' : 'Стрелка_вниз';
+  });
+}
+
+// Услуги и сервисы
+document.addEventListener('DOMContentLoaded', function () {
+  var tabButtons = document.querySelectorAll('.services__scroll-container .services__tab');
+  tabButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabButtons.forEach(function (b) {
+        return b.classList.remove('services__tab--active');
+      });
+      this.classList.add('services__tab--active');
+    });
+  });
+});
 // EXTERNAL MODULE: ./src/js/burger.js
 var burger = __webpack_require__(819);
 ;// ./src/js/sliderTehnic.js
+
+
 
 
 
@@ -10003,8 +10038,6 @@ var servicesSlider = new Swiper('.technics__slider', {
     clickable: true
   }
 });
-
-// Адаптация под разные экраны
 function checkScreenSize() {
   var servicesSlider = document.querySelector('.technics__slider');
   var serviceGrid = document.querySelector('.technic-grid');
@@ -10016,10 +10049,24 @@ function checkScreenSize() {
     if (serviceGrid) serviceGrid.style.display = 'none';
   }
 }
-
-// Проверка при загрузке и изменении размера окна
 window.addEventListener('load', checkScreenSize);
 window.addEventListener('resize', checkScreenSize);
+
+// кнопка 
+document.addEventListener('DOMContentLoaded', function () {
+  var toggleBtn = document.querySelector('.toggle-btn-technic');
+  if (toggleBtn) {
+    var toggleImg = toggleBtn.querySelector('img');
+    var toggleText = toggleBtn.querySelector('span');
+    var expanded = false;
+    toggleBtn.addEventListener('click', function () {
+      expanded = !expanded;
+      toggleText.textContent = expanded ? 'Скрыть' : 'Показать все';
+      toggleImg.src = expanded ? expandVverh_namespaceObject : expand_namespaceObject;
+      toggleImg.alt = expanded ? 'Стрелка_вверх' : 'Стрелка_вниз';
+    });
+  }
+});
 ;// ./src/js/sliderPrice.js
 
 
@@ -10029,8 +10076,8 @@ var priceSlider = new Swiper('.price__slider', {
   modules: [Pagination],
   slidesPerView: 'auto',
   spaceBetween: 16,
-  slidesOffsetBefore: 16,
-  slidesOffsetAfter: 16,
+  slidesOffsetBefore: 8,
+  slidesOffsetAfter: 0,
   pagination: {
     el: '.swiper-pagination',
     clickable: true
