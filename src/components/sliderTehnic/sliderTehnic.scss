@@ -6,6 +6,7 @@
   
   @media (min-width: 768px) {
     margin: 0 -24px;
+    gap: 24px;
   }
   
   @media (min-width: 1120px) {
@@ -73,6 +74,7 @@
   z-index: 1;
   border-radius: 6px;
   max-width: 100%;
+  
 
    @media (min-width: 768px) {
     display: none;
@@ -115,7 +117,7 @@
 .swiper-pagination {
   position: relative !important;
   text-align: center;
-  margin-top: 16px;
+  padding-top: 16px;
 }
 
 .swiper-pagination-bullet {
@@ -198,15 +200,9 @@
   @media (min-width: 1120px) {
     padding-left: 32px;
   }
-  &:hover {
-    color: #FF3E79;
-  }
+ 
 }
 
-.toggle-btn-technic.active {
-  color: #FF3E79;
-  opacity: 1;
-}
 
 .swiper-slide.technics__item {
   width: 240px !important;

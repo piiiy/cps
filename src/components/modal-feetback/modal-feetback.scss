@@ -15,9 +15,10 @@
     width: 100%;
     height: 100%;
     background: #FFFFFF;
-    padding: 40px 32px;
+    padding: 24px 16px;
     box-sizing: border-box;
     z-index: 1001;
+
   }
 
   &__header {
@@ -34,7 +35,8 @@
 
   &__highlight {
     position: relative;
-    left: -32px;
+    left: -16px;
+
   }  
 
 
@@ -43,10 +45,7 @@
     border: none;
     padding: 0;
     cursor: pointer;
-    @media (min-width: 768px) {
-      position: absolute;
-      left: -64px;
-    }
+    display: flex;
   }
 
   &__title {
@@ -93,6 +92,8 @@
   }
 
   &__send-button {
+    position: relative;
+    bottom: -3px;
     background: none;
     border: 2px solid #ffffff;
     cursor: pointer;
@@ -141,7 +142,22 @@
       margin-left: auto;
       box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
       animation: slideInRight 0.3s ease-out;
+      padding: 40px 32px;
     }
+
+    &__send-button {
+      bottom: -7px;
+    }
+
+    &__highlight {
+      left: -32px;      
+    }
+
+    &__close-button {
+      position: absolute;
+      left: -64px;
+    }
+
   }
 
   @keyframes slideInRight {

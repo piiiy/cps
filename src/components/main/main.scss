@@ -73,6 +73,13 @@ body {
 }
 
 /* сервис и услуги */
+
+ .services-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
 .services {
     padding: 24px 16px 0;
     display: flex;
@@ -190,7 +197,7 @@ body {
 .services__picture {
     width: 100vw;
     margin-left: -16px;
-    display: block; 
+    display: block;
 }
 
 /* 768 */
@@ -228,6 +235,10 @@ body {
   }
 
   /* услуги и сервисы*/
+   .services-footer{ 
+    gap: 47px;
+   }
+
    .services {
     padding: 0 24px;
     display: flex;
@@ -278,14 +289,16 @@ body {
   
   .services__image {
     width: 50%;
+    
   }
 
   .services__picture {
-    margin-left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 6px;
-    width: clamp(360px, calc(360px + 170.25 * (100vw - 768px) / 351), 530.25px);
-    height: clamp(208px, calc(208px + 98 * (100vw - 768px) / 351), 306px);
-  }
+    display: block
+    }
 }
 
 /* 1120 */
@@ -293,15 +306,18 @@ body {
     .header {
         display: none;
     }
-    
+
     .main {
         padding-top: 42px;
     }
 
     /* услуги и сервис*/
+    .services-footer{ 
+    gap: 50px;
+    }
     .services {
         padding: 0 32px;
-        gap: 50;
+        gap: 50px;
     }
 
     .services__header-nav {
@@ -371,12 +387,7 @@ body {
         width: 50%;
     }
     
-    .services__picture {
-        border-radius: 6px;
-        width: 100%;
-        width: clamp(531.25px, calc(531.25px + 28.75 * (100vw - 1120px) / 800), 560px);
-        height: clamp(307px, calc(307px + 43 * (100vw - 1120px) / 800), 350px);
-    }
+    
     
   .services__paragraph--part3{
     display: inline;

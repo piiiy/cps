@@ -1,11 +1,12 @@
 .price-section{
-    
-    @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
+    gap: 16px;
+    margin: 0px -16px;
+    @media (min-width: 768px) {
     gap: 24px;
     }
-    @media (min-width: 1440px) {
+    @media (min-width: 1120px) {
       gap: 32px;
     }
 }
@@ -16,13 +17,11 @@
   border-top: 1px solid #d9fff5;
   align-items: center;
   box-sizing: border-box;
-  padding-left: 32px;
-  margin-left: -24px;
   }
 
 
 .price__title {
-  padding: 16px 0;
+  padding: 16px 0 16px 16px;
   margin: 0;
   font-weight: 400;
   font-size: 16px;
@@ -33,7 +32,7 @@
   font-family: "TT Lakes", sans-serif;
 }
 
-// Слайдер (мобилка)
+// Слайдер 
 .price {
   @media (min-width: 768px) {
     display: none;
@@ -41,7 +40,7 @@
 }
 
 .price__slider {
-  padding: 0 16px;
+  padding: 16px;
   overflow: visible;
 }
 
@@ -60,28 +59,35 @@
   position: relative;
 }
 
+.price__fade {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(270deg, #F8F8F8 0%, rgba(248, 248, 248, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+
 .price__block {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
- 
 }
 
 .price__block .price__text {
   color: #7e7e82;
-  font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 0;
-  margin-top: 0;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .price__block .price__span {
   color: #1B1C21;
   font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 0;
-  margin-top: 0;
+  font-size: 14px;
+  letter-spacing: 0.2px;
 }
 
 .price__block--main {
@@ -109,21 +115,27 @@
   right: 16px;
   bottom: 16px;
   &:hover {
-    background: #ff629e;
+    background: #7e7e82;
   }
 }
 
-// Grid-таблица (планшет/десктоп)
+// Grid
+.price-header-table {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+
 .price-table {
   display: none;
   background: #fff;
   border-radius: 6px;
   @media (min-width: 768px) {
     display: block;
-    padding: 24px;
+    padding: 16px;
   }
-  @media (min-width: 1140px) {
-    padding: 32px 40px;
+  @media (min-width: 1120px) {
+    padding: 16px 24px;
   }
   
 }
@@ -137,11 +149,10 @@
   color: #7e7e82;
   font-size: 14px;
   border-radius: 6px 6px 0 0;
-  padding: 16px 24px 16px 24px;
-  margin-bottom: -24px;
+  padding: 0px 16px 16px 16px;
  } 
-  @media (min-width: 1440px) {
-    margin-bottom: -32px;
+  @media (min-width: 1120px) {
+     padding: 0px 24px 16px 24px;
   }
 }
 
@@ -156,10 +167,14 @@
   grid-template-columns: 2fr 1fr 1fr 120px;
   align-items: center;
   border-bottom: 1px solid #EAEAEA;
-  padding: 16px 0;
-  font-size: 16px;
+  padding: 16px 0px;
+  font-size: 14px;
+  &:first-child {
+    padding-top: 0;
+  }
   &:last-child {
     border-bottom: none;
+    padding-bottom: 0;
   }
 }
 
@@ -169,11 +184,9 @@
   border-radius: 16px;
   color: #fff;
   font-weight: 700;
-  font-size: 16px;
-  padding: 8px 24px;
+  font-size: 12px;
   display: flex;
   align-items: center;
-  gap: 8px;
   cursor: pointer;
   transition: background 0.2s;
   justify-self: end;

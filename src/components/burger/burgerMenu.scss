@@ -10,9 +10,9 @@
   transition: left 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  padding: 24px 16px;
+  padding: 18px 16px 32px;
   box-sizing: border-box;
-  gap: 46px;
+  gap: 32px;
   overflow-y: auto;
 }
 
@@ -22,6 +22,12 @@
 
 .mobile-menu--closed {
   box-shadow: none;
+}
+
+.mobile-menu__header-nav{
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 .mobile-menu__overlay {
@@ -75,14 +81,14 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
 .mobile-menu__item {
   position: relative;
 }
 
-.mobile-menu__item--active::before {
+.mobile-menu__item--hovered::before {
   content: '';
   position: absolute;
   left: -16px;
@@ -99,6 +105,7 @@
   font-size: 16px;
   font-weight: 500;
   transition: color 0.3s ease;
+  letter-spacing: -0.2px
 }
 
 .mobile-menu__link:hover {
@@ -106,7 +113,13 @@
 }
 
 .mobile-menu__footer {
-  margin-top: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-menu__buttons-contacts {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -182,6 +195,35 @@
   color: #7E7E82;
 }
 
+@media (min-width: 768px) {
+
+  .mobile-menu{
+    padding: 18px 24px 32px 24px;
+    gap: 268px;
+  }
+
+  .mobile-menu__list {
+    gap: 32px;
+  }
+
+  .mobile-menu__header-nav{
+  gap: 46px;
+}
+  .mobile-menu__footer {
+  gap: 40px;
+}
+
+  .mobile-menu__buttons-contacts {
+    gap: 25px;
+  }
+
+  
+.mobile-menu__item--hovered::before {
+  left: -24px;
+}
+
+}
+
 @media (min-width: 1120px) {
   .mobile-menu {
     position: fixed;
@@ -191,9 +233,32 @@
     width: 320px;
     z-index: 1000;
     transition: none;
+    padding: 30px 29px 0 24px;
+    gap: 241px;
   }
   .main, .main-content {
     margin-left: 320px;
   }
+  
+  .mobile-menu__close-button {
+    display: none;
+  }
+
+   .mobile-menu__list {
+    gap: 28px;
+  }
+
+  .mobile-menu__header-nav{
+  gap: 43px;
+}
+  .mobile-menu__footer {
+  margin-top: 0;
+  gap: 40px;
+}
+
+  .mobile-menu__buttons-contacts {
+    gap: 16px;
+  }
+
 }
 

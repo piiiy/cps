@@ -15,16 +15,20 @@
     width: 100%;
     height: 100%;
     background: #FFFFFF;
-    padding: 40px 32px; 
+     padding: 24px 16px;
     box-sizing: border-box;
     z-index: 1001;
+
+    @media (min-width: 768px) {
+      padding: 40px 32px;
+    }
+
   }
 
   &__header {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    align-items: flex-start;
   }
 
   &__title-row {
@@ -34,7 +38,11 @@
 
   &__highlight {
     position: relative;
-    left: -32px;
+    left: -16px;
+
+    @media (min-width: 768px) {
+      left: -32px;
+    }
   }  
 
 
@@ -43,6 +51,7 @@
     border: none;
     padding: 0;
     cursor: pointer;
+    display: flex;
     @media (min-width: 768px) {
       position: absolute;
       left: -64px;
@@ -93,6 +102,8 @@
   }
 
   &__send-button {
+    position: relative;
+    bottom: -2px;
     background: none;
     border: 2px solid #ffffff;
     cursor: pointer;
@@ -142,6 +153,11 @@
       box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
       animation: slideInRight 0.3s ease-out;
     }
+
+    &__send-button {
+      bottom: 0;
+    }
+
   }
 
   @keyframes slideInRight {

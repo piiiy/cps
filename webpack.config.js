@@ -11,7 +11,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'app'),
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   module: {
@@ -21,8 +21,17 @@ module.exports = {
         loader: "html-loader",
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.svg$/i,
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 4 * 1024 // 4kb
+          }
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -43,6 +52,11 @@ module.exports = {
         use: [isProd ? MiniCssExtractPlugin.loader : 'style-loader', "css-loader", 'postcss-loader', 'sass-loader'],
       }
     ]
+  },
+  performance: {
+    hints: isProd ? 'warning' : false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
   optimization: {
     minimizer: [

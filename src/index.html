@@ -48,6 +48,7 @@
 
     <!-- Мобильное меню -->
     <div class="mobile-menu">
+      <div class="mobile-menu__header-nav">
       <!-- шапка -->
       <div class="mobile-menu__header">
         <div class="mobile-menu__left-icon">
@@ -64,7 +65,7 @@
       <!-- навигация -->
       <nav class="mobile-menu__nav">
         <ul class="mobile-menu__list">
-          <li class="mobile-menu__item mobile-menu__item--active">
+          <li class="mobile-menu__item ">
             <a href="#" class="mobile-menu__link">Ремонт техники</a>
           </li>
           <li class="mobile-menu__item">
@@ -90,9 +91,10 @@
           </li>
         </ul>
       </nav>
-
+    </div>
       <!-- контакты -->
-      <div class="mobile-menu__footer">
+    <div class="mobile-menu__footer">
+      <div class="mobile-menu__buttons-contacts">
         <div class="mobile-menu__buttons">
           <button class="mobile-menu__button mobile-menu__button-call">
             <img src="./assets/burger-icon/call.svg" alt="Позвонить" />
@@ -109,14 +111,14 @@
           <a href="mailto:mail@cps.com" class="mobile-menu__email">mail@cps.com</a>
           <a href="tel:+78008908900" class="mobile-menu__phone">8 800 890 8900</a>
         </div>
-
+     </div>
         <div class="mobile-menu__lang">
           <button class="mobile-menu__lang-button mobile-menu__lang-button--active">RU</button>
           <button class="mobile-menu__lang-button">EN</button>
           <button class="mobile-menu__lang-button">CH</button>
         </div>
       </div>
-    </div>
+  </div>
 
     <div class="mobile-menu__overlay"></div>
 
@@ -140,7 +142,7 @@
                 <input class="modal-feedback__input" placeholder="Электронная почта" type="email" />
                 <textarea class="modal-feedback__input modal-feedback__input-messange" placeholder="Сообщение"></textarea>
                 <p class="modal-feedback__text">
-                  Нажимая “отправить”, вы даете согласие на
+                  Нажимая "отправить", вы даете согласие на
                   <span class="modal-feedback__span">обработку персональных данных</span>
                   и соглашаетесь с нашей
                   <span class="modal-feedback__span">политикой конфиденциальности</span>.
@@ -169,7 +171,7 @@
               <div class="modal-call__form">
                 <input class="modal-call__input" placeholder="Телефон" type="phone" />
                 <p class="modal-call__text">
-                  Нажимая “отправить”, вы даете согласие на
+                  Нажимая "отправить", вы даете согласие на
                   <span class="modal-call__span">обработку персональных данных</span>
                   и соглашаетесь с нашей
                   <span class="modal-call__span">политикой конфиденциальности</span>.
@@ -186,7 +188,8 @@
 
 
     <main class="main">
-      <section class="services">
+     <div class="services-footer">
+      <div class="services">
         <!-- услуги и сервисы -->
         <div class="services__header-nav">
           <div class="services__header">
@@ -237,7 +240,7 @@
             </div>
             <button class="services__more">
               <img src="./assets/main-icons/expand.svg" alt="Стрелка_вниз" />
-              Читать далее
+              <span>Читать далее</span>
             </button>
           </div>
 
@@ -334,8 +337,8 @@
                   </button>
                 </div>
               </div>
-              <div class="swiper-pagination"></div>
-              <div class="brands__fade"></div>
+             <div class="swiper-pagination"></div>
+             <div class="brands__fade"></div>
             </div>
           </div>
 
@@ -482,22 +485,16 @@
           </div>
           <button class="toggle-btn-technic">
             <img src="./assets/main-icons/expand.svg" alt="Стрелка_вниз" />
-            <span class="toggle-btn-technic__text">Показать все</span>
+            <span >Показать все</span>
           </button>
         </div>
 
 
          <!-- прайс-слайдер -->
-          <div class="price-section">
+        <div class="price-section">
+            <div class="price-header-table">
             <div class="price__header">
               <h2 class="price__title">Цены на услуги</h2>
-            </div>
-
-            <div class="price-table__head">
-              <span>Ремонтные услуги</span>
-              <span>Цена</span>
-              <span>Срок</span>
-              <span></span>
             </div>
 
           <div class="price">
@@ -598,55 +595,64 @@
               </div>
             </div>
 
-            <div class="price-table price-table--grid">
-              <div class="price-grid--table">
-                <div class="price-table__row">
-                  <span class="price-table__service">Диагностика</span>
-                  <span class="price-table__price">Бесплатно</span>
-                  <span class="price-table__time">30 мин</span>
-                  <button class="price-table__button">
-                    <img src="./assets/slader-icon/button.svg" alt=">" />
-                  </button>
-                </div>
+            <div class="price-table-head">
+              <div class="price-table__head">
+                <span>Ремонтные услуги</span>
+                <span>Цена</span>
+                <span>Срок</span>
+                <span></span>
+              </div>
 
-                <div class="price-table__row">
-                  <span class="price-table__service">Замена дисплея</span>
-                  <span class="price-table__price">1000 ₽</span>
-                  <span class="price-table__time">30–120 мин</span>
-                  <button class="price-table__button">
-                    <img src="./assets/slader-icon/button.svg" alt=">" />
-                  </button>
-                </div>
+              <div class="price-table price-table--grid">
+                <div class="price-grid--table">
+                  <div class="price-table__row">
+                    <span class="price-table__service">Диагностика</span>
+                    <span class="price-table__price">Бесплатно</span>
+                    <span class="price-table__time">30 мин</span>
+                    <button class="price-table__button">
+                      <img src="./assets/slader-icon/button.svg" alt=">" />
+                    </button>
+                  </div>
 
-                <div class="price-table__row">
-                  <span class="price-table__service">Замена полифонического динамика</span>
-                  <span class="price-table__price">1000 ₽</span>
-                  <span class="price-table__time">30–120 мин</span>
-                  <button class="price-table__button">
-                    <img src="./assets/slader-icon/button.svg" alt=">" />
-                  </button>
-                </div>
+                  <div class="price-table__row">
+                    <span class="price-table__service">Замена дисплея</span>
+                    <span class="price-table__price">1000 ₽</span>
+                    <span class="price-table__time">30–120 мин</span>
+                    <button class="price-table__button">
+                      <img src="./assets/slader-icon/button.svg" alt=">" />
+                    </button>
+                  </div>
 
-                <div class="price-table__row">
-                  <span class="price-table__service">Тестирование с выдачей технического заключения</span>
-                  <span class="price-table__price">1000 ₽</span>
-                  <span class="price-table__time">30–120 мин</span>
-                  <button class="price-table__button">
-                    <img src="./assets/slader-icon/button.svg" alt=">" />
-                  </button>
-                </div>
+                  <div class="price-table__row">
+                    <span class="price-table__service">Замена полифонического динамика</span>
+                    <span class="price-table__price">1000 ₽</span>
+                    <span class="price-table__time">30–120 мин</span>
+                    <button class="price-table__button">
+                      <img src="./assets/slader-icon/button.svg" alt=">" />
+                    </button>
+                  </div>
 
-                <div class="price-table__row">
-                  <span class="price-table__service">Замена программного обеспечения</span>
-                  <span class="price-table__price">1000 ₽</span>
-                  <span class="price-table__time">30–120 мин</span>
-                  <button class="price-table__button">
-                    <img src="./assets/slader-icon/button.svg" alt=">" />
-                  </button>
+                  <div class="price-table__row">
+                    <span class="price-table__service">Тестирование с выдачей технического заключения</span>
+                    <span class="price-table__price">1000 ₽</span>
+                    <span class="price-table__time">30–120 мин</span>
+                    <button class="price-table__button">
+                      <img src="./assets/slader-icon/button.svg" alt=">" />
+                    </button>
+                  </div>
+
+                  <div class="price-table__row">
+                    <span class="price-table__service">Замена программного обеспечения</span>
+                    <span class="price-table__price">1000 ₽</span>
+                    <span class="price-table__time">30–120 мин</span>
+                    <button class="price-table__button">
+                      <img src="./assets/slader-icon/button.svg" alt=">" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-
+          </div>
             <!-- информэйшен -->
             <div class="information">
               <p class="information__text">
@@ -676,7 +682,8 @@
             </p>
           </div>
         </div>
-      </section>
+      </div>
+     </div>
     </main>
   </body>
 </html>

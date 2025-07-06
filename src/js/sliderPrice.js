@@ -7,8 +7,8 @@ const priceSlider = new Swiper('.price__slider', {
   modules: [Pagination],
   slidesPerView: 'auto',
   spaceBetween: 16,
-  slidesOffsetBefore: 16,
-  slidesOffsetAfter: 16,
+  slidesOffsetBefore: 8,
+  slidesOffsetAfter: 0,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -29,4 +29,5 @@ function checkPriceScreenSize() {
 
 window.addEventListener('resize', checkPriceScreenSize);
 document.addEventListener('DOMContentLoaded', checkPriceScreenSize);
+
 
