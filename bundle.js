@@ -36,16 +36,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var mobileMenu = document.querySelector('.mobile-menu');
   var mobileMenuOverlay = document.querySelector('.mobile-menu__overlay');
   var closeButton = document.querySelector('.mobile-menu__close-button');
-
-  //открытие меню
   function openMenu() {
     mobileMenu.classList.add('mobile-menu--open');
     mobileMenu.classList.remove('mobile-menu--closed');
     mobileMenuOverlay.classList.add('mobile-menu__overlay--open');
     document.body.style.overflow = 'hidden';
   }
-
-  //закрытие меню
   function closeMenu() {
     mobileMenu.classList.remove('mobile-menu--open');
     mobileMenu.classList.add('mobile-menu--closed');
@@ -55,18 +51,23 @@ document.addEventListener('DOMContentLoaded', function () {
   burgerButton.addEventListener('click', openMenu);
   closeButton.addEventListener('click', closeMenu);
   mobileMenuOverlay.addEventListener('click', closeMenu);
-
-  // меню закрыто при загрузке
   mobileMenu.classList.add('mobile-menu--closed');
-
-  // Логика для подсветки полоски при наведении
   var menuItems = document.querySelectorAll('.mobile-menu__item');
   menuItems.forEach(function (item) {
     item.addEventListener('mouseenter', function () {
+      menuItems.forEach(function (i) {
+        return i.classList.remove('mobile-menu__item--hovered');
+      });
       item.classList.add('mobile-menu__item--hovered');
     });
     item.addEventListener('mouseleave', function () {
       item.classList.remove('mobile-menu__item--hovered');
+    });
+    item.addEventListener('click', function () {
+      menuItems.forEach(function (i) {
+        return i.classList.remove('mobile-menu__item--active');
+      });
+      item.classList.add('mobile-menu__item--active');
     });
   });
 });
